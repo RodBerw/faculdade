@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="1">Digite dois valores:</label><br>
+    <input type="number" name="valor" id="1"><br>
+    <input type="number" name="valor" id="2">
+    <br><br>
+    <p id="result"></p>
+    <button onclick="main()">Confirmar</button>
+
+    <script>
+        function main(){
+            var n1 = Number(document.getElementById("1").value);
+            var n2 = Number(document.getElementById("2").value);
+
+            if(n1 && n2 != 0){
+                document.getElementById("result").innerText = `${n1} + ${n2} = ${n1 + n2} | ${Math.max(n1, n2)} - ${Math.min(n1,n2)} = ${Math.max(n1, n2) - Math.min(n1,n2)} | ${n1} x ${n2} = ${n1 * n2} | ${n1} % ${n2} = ${n1 / n2}`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 100%; text-align: center;">
+        <img id="lamp" onmousemove="ligar()" onmouseleave="desligar()" ondblclick="quebrar()" src="imgs/desligada.jpeg" alt="" style="width: 25%; margin: auto; display: inline-block;">
+    </div>
+
+    <script>
+        var lamp = document.getElementById("lamp");
+        var quebrado = false;
+
+        function ligar(){
+            if(quebrado == false){
+                lamp.src = "imgs/ligada.jpeg";
+            }
+        }
+
+        function desligar(){
+            if(quebrado == false){
+                lamp.src = "imgs/desligada.jpeg";
+            }
+        }
+
+        function quebrar(){
+            lamp.src = "imgs/quebrada.jpeg";
+            quebrado = true;
+        }
+    </script>
+</body>
+</html>

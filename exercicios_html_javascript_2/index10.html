@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 100%; text-align: center;">
+        <img id="sem" src="imgs/vermelho.png" alt="" style="width: 15%; margin: auto; display: inline-block;">
+        <br><br><br>
+        <button id="botao" onclick="ligado()">LIGAR</button>
+    </div>
+
+    <script>
+        var intervalo;
+        
+        function ligado(){
+            intervalo = setInterval(main, 3000);
+        }
+
+        function main(){
+            var img = document.getElementById("sem");
+            console.log(img.src);
+
+            
+            if(document.getElementById("botao").innerHTML == "LIGAR"){
+                document.getElementById("botao").innerHTML = "DESLIGAR"
+            }else{
+                document.getElementById("botao").innerHTML = "LIGAR"
+                clearInterval(intervalo);
+            }
+            
+            document.getElementById("botao").innerHTML = "DESLIGAR"
+                
+                if(img.src == "http://127.0.0.1:5500/imgs/vermelho.png"){
+                    img.src = "imgs/amarelo.png";
+                }else if(img.src == "http://127.0.0.1:5500/imgs/amarelo.png"){
+                    img.src = "imgs/verde.png";
+                }else if(img.src = "http://127.0.0.1:5500/imgs/amarelo.png"){
+                    img.src = "imgs/vermelho.png";
+                }
+        }
+
+        
+    </script>
+</body>
+</html>
